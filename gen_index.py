@@ -82,7 +82,7 @@ html = f'''<!DOCTYPE html>
   <div class="list">{"".join(items)}
   </div>
   <p class="foot">💡 Consejo: navega las slides con las flechas del teclado.<br>
-  Las grabaciones y el material adicional están en la <b>carpeta compartida del curso</b> (link en el correo de bienvenida).</p>
+  La <b>grabación de cada sesión</b> se sube a la carpeta compartida después de clase.</p>
 </body>
 </html>
 '''
