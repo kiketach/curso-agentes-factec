@@ -11,6 +11,12 @@
     background:radial-gradient(900px 450px at 85% -5%,rgba(124,127,240,.12),transparent),
       radial-gradient(rgba(124,127,240,.13) 1.5px,transparent 1.5px) 0 0/28px 28px,var(--bg);
     display:flex;flex-direction:column;align-items:center;padding:48px 18px}
+  .logos{display:flex;align-items:center;gap:18px;margin-bottom:26px}
+  .lg-factec{height:46px;width:auto}
+  .lg-sep{width:1px;height:38px;background:var(--line)}
+  .lg-fyllu{display:flex;align-items:center;gap:8px}
+  .lg-fyllu img{height:26px;width:auto}
+  .lg-fyllu span{font-weight:800;font-size:19px;letter-spacing:-.3px;color:var(--ink)}
   .kicker{font-size:11px;letter-spacing:4px;color:var(--purple);font-weight:700;text-transform:uppercase;margin-bottom:10px}
   h1{font-size:clamp(26px,5vw,40px);font-weight:800;letter-spacing:-.5px;text-align:center;line-height:1.15}
   h1 span{color:var(--purple)}
@@ -37,6 +43,11 @@
 </style>
 </head>
 <body>
+  <div class="logos">
+    <img src="logo_factec.png" alt="Facultad Tecnológica USACH" class="lg-factec">
+    <div class="lg-sep"></div>
+    <div class="lg-fyllu"><img src="fyllu_icon.webp" alt="Fyllu"><span>Fyllu</span></div>
+  </div>
   <div class="kicker">— &nbsp;Séptima Escuela de Temporada FACTEC 2026 · USACH&nbsp; —</div>
   <h1>Construye tu primer agente de IA:<br><span>de la idea a un asistente funcional</span></h1>
   <p class="sub">Relator: Enrique Abril Contreras · Las slides de cada sesión se publican aquí el día de la clase.</p>
