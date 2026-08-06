@@ -15,6 +15,12 @@
   h1{font-size:clamp(26px,5vw,40px);font-weight:800;letter-spacing:-.5px;text-align:center;line-height:1.15}
   h1 span{color:var(--purple)}
   .sub{color:var(--muted);margin:10px 0 34px;text-align:center;font-size:14px}
+  .acc{width:100%;max-width:680px;display:flex;gap:12px;margin-bottom:22px;flex-wrap:wrap}
+  .acc-item{flex:1;min-width:260px;display:flex;align-items:center;gap:14px;padding:14px 18px;text-decoration:none;color:var(--ink)}
+  .acc-item:hover{border-color:var(--purple);transform:translateY(-1px);transition:.15s}
+  .acc-item .ic{font-size:22px}
+  .acc-item b{font-size:14px;display:block}
+  .acc-item span{font-size:11.5px;color:var(--muted)}
   .list{width:100%;max-width:680px;display:flex;flex-direction:column;gap:12px}
   .card{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:0 4px 18px rgba(60,60,140,.06)}
   .item{display:flex;align-items:center;gap:16px;padding:16px 20px;text-decoration:none;color:var(--ink)}
@@ -34,6 +40,14 @@
   <div class="kicker">— &nbsp;Séptima Escuela de Temporada FACTEC 2026 · USACH&nbsp; —</div>
   <h1>Construye tu primer agente de IA:<br><span>de la idea a un asistente funcional</span></h1>
   <p class="sub">Relator: Enrique Abril Contreras · Las slides de cada sesión se publican aquí el día de la clase.</p>
+  <div class="acc">
+    <a class="card acc-item" href="https://meet.google.com/bbp-iqaj-mhy" target="_blank">
+      <div class="ic">🎦</div><div><b>Sala de clases (Google Meet)</b><span>Mismo enlace todas las sesiones · ingresa como Apellido.Nombre</span></div>
+    </a>
+    <a class="card acc-item" href="https://drive.google.com/drive/folders/1WMxvNrlUw88F_eTNltUMuUOWvGC7bl81" target="_blank">
+      <div class="ic">📁</div><div><b>Grabaciones y material</b><span>Carpeta compartida del curso (solo participantes)</span></div>
+    </a>
+  </div>
   <div class="list">
       <div class="card item">
         <div class="num off">1</div>
