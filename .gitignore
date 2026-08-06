@@ -1,0 +1,9 @@
+# Defensa: nunca publicar documentos ni datos
+*.docx
+*.xlsx
+*.pdf
+*.csv
+*.jpg
+*.png
+*.zip
+*.mp4
