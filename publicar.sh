@@ -14,6 +14,25 @@ case "$N" in
   *) echo "Sesión inválida: $N (usa 1..6)"; exit 1 ;;
 esac
 
+# Inyectar botón "← Inicio" para volver al hub (solo en la copia publicada)
+python - "sesion$N.html" <<'PYEOF'
+import sys
+p = sys.argv[1]
+s = open(p, encoding='utf-8').read()
+BTN = ('<a id="volver-inicio" href="./" title="Volver al inicio" '
+       'style="position:fixed;top:12px;right:14px;z-index:99999;'
+       "font-family:'Segoe UI',sans-serif;font-size:12px;font-weight:700;"
+       'color:#5b5fd6;background:rgba(255,255,255,.92);border:1px solid #e4e4f4;'
+       'border-radius:20px;padding:6px 14px;text-decoration:none;'
+       'box-shadow:0 2px 10px rgba(60,60,140,.2)">← Inicio</a>')
+if 'volver-inicio' not in s:
+    s = s.replace('</body>', BTN + '</body>')
+    open(p, 'w', encoding='utf-8').write(s)
+    print('boton inyectado en', p)
+else:
+    print('boton ya presente en', p)
+PYEOF
+
 python gen_index.py
 git add -A
 git commit -m "Publica sesión $N"
