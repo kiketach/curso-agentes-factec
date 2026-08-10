@@ -7,7 +7,7 @@ cd "$(dirname "$0")"
 N="$1"
 [ -z "$N" ] && { echo "Uso: bash publicar.sh N (1..6)"; exit 1; }
 
-SRC="../material_curso_enrique/slides_marp"
+SRC="../material_curso/slides_marp"
 case "$N" in
   1|2|3|4|5) cp "$SRC/clase$N.html" "sesion$N.html" ;;
   6)         cp "$SRC/sesion6_factec.html" "sesion6.html" ;;
