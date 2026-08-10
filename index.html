@@ -4,42 +4,95 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Construye tu primer agente de IA — FACTEC 2026</title>
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+<meta name="theme-color" content="#7c7ff0">
+<meta name="description" content="Curso de la Séptima Escuela de Temporada FACTEC 2026 (USACH). 6 sesiones para construir tu primer agente de IA, del 18 al 27 de agosto.">
+<meta property="og:title" content="Construye tu primer agente de IA — FACTEC 2026">
+<meta property="og:description" content="6 sesiones en vivo para pasar de usar la IA a construir con ella. Escuela de Temporada FACTEC 2026, USACH.">
+<meta property="og:type" content="website">
 <style>
-  :root{--purple:#7c7ff0;--purple-dark:#5b5fd6;--ink:#1c1c2e;--muted:#6b6f85;--bg:#f7f7fd;--card:#fff;--line:#e4e4f4;--soft:#eeeefc}
+  :root{
+    --purple:#7c7ff0; --purple-dark:#5b5fd6; --ink:#1c1c2e; --muted:#6b6f85;
+    --bg:#f4f4fc; --line:rgba(124,127,240,.16); --glass:rgba(255,255,255,.55);
+  }
   *{margin:0;padding:0;box-sizing:border-box}
-  body{font-family:'Segoe UI',Inter,system-ui,sans-serif;color:var(--ink);min-height:100vh;
-    background:radial-gradient(900px 450px at 85% -5%,rgba(124,127,240,.12),transparent),
-      radial-gradient(rgba(124,127,240,.13) 1.5px,transparent 1.5px) 0 0/28px 28px,var(--bg);
-    display:flex;flex-direction:column;align-items:center;padding:48px 18px}
-  .logos{display:flex;align-items:center;gap:18px;margin-bottom:26px}
-  .lg-factec{height:46px;width:auto}
-  .lg-sep{width:1px;height:38px;background:var(--line)}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Segoe UI',Inter,-apple-system,system-ui,sans-serif;color:var(--ink);min-height:100vh;
+    background:
+      radial-gradient(1100px 620px at 78% -12%, rgba(124,127,240,.34), transparent 62%),
+      radial-gradient(900px 520px at 8% 104%, rgba(167,139,250,.28), transparent 60%),
+      radial-gradient(760px 480px at 96% 78%, rgba(96,165,250,.20), transparent 62%),
+      var(--bg);
+    display:flex;flex-direction:column;align-items:center;padding:46px 20px 60px;
+  }
+  /* ── encabezado ── */
+  .logos{display:flex;align-items:center;gap:18px;margin-bottom:30px;
+    background:var(--glass);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);
+    border:1px solid rgba(255,255,255,.7);border-radius:18px;padding:12px 22px;
+    box-shadow:0 8px 32px rgba(60,60,140,.10)}
+  .lg-factec{height:40px;width:auto}
+  .lg-sep{width:1px;height:32px;background:var(--line)}
   .lg-fyllu{display:flex;align-items:center;gap:8px}
-  .lg-fyllu img{height:26px;width:auto}
-  .lg-fyllu span{font-weight:800;font-size:19px;letter-spacing:-.3px;color:var(--ink)}
-  .kicker{font-size:11px;letter-spacing:4px;color:var(--purple);font-weight:700;text-transform:uppercase;margin-bottom:10px}
-  h1{font-size:clamp(26px,5vw,40px);font-weight:800;letter-spacing:-.5px;text-align:center;line-height:1.15}
-  h1 span{color:var(--purple)}
-  .sub{color:var(--muted);margin:10px 0 34px;text-align:center;font-size:14px}
-  .acc{width:100%;max-width:680px;display:flex;gap:12px;margin-bottom:22px;flex-wrap:wrap}
-  .acc-item{flex:1;min-width:260px;display:flex;align-items:center;gap:14px;padding:14px 18px;text-decoration:none;color:var(--ink)}
-  .acc-item:hover{border-color:var(--purple);transform:translateY(-1px);transition:.15s}
-  .acc-item .ic{font-size:22px}
-  .acc-item b{font-size:14px;display:block}
-  .acc-item span{font-size:11.5px;color:var(--muted)}
-  .list{width:100%;max-width:680px;display:flex;flex-direction:column;gap:12px}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:0 4px 18px rgba(60,60,140,.06)}
-  .item{display:flex;align-items:center;gap:16px;padding:16px 20px;text-decoration:none;color:var(--ink)}
-  a.item.pub:hover{border-color:var(--purple);transform:translateY(-1px);transition:.15s}
-  .num{flex:none;width:38px;height:38px;border-radius:11px;background:var(--purple);color:#fff;font-weight:800;font-size:17px;display:flex;align-items:center;justify-content:center}
-  .num.off{background:var(--soft);color:var(--muted)}
-  .tx{flex:1;line-height:1.35}
-  .tx b{font-size:15px}
-  .tx span{display:block;font-size:12px;color:var(--muted)}
-  .badge{font-size:11px;font-weight:700;color:var(--muted);background:var(--soft);border:1px solid var(--line);border-radius:20px;padding:5px 12px;white-space:nowrap}
-  .badge.ok{color:#fff;background:var(--purple);border-color:var(--purple)}
-  .foot{margin-top:36px;color:var(--muted);font-size:12px;text-align:center;line-height:1.7}
+  .lg-fyllu img{height:24px;width:auto}
+  .lg-fyllu span{font-weight:800;font-size:18px;letter-spacing:-.3px}
+  .kicker{font-size:10.5px;letter-spacing:4px;color:var(--purple-dark);font-weight:700;
+    text-transform:uppercase;margin-bottom:12px;text-align:center}
+  h1{font-size:clamp(28px,5.2vw,46px);font-weight:800;letter-spacing:-1.2px;text-align:center;line-height:1.1}
+  h1 .grad{background:linear-gradient(100deg,var(--purple) 10%,#a78bfa 55%,#60a5fa 100%);
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .sub{color:var(--muted);margin:14px 0 34px;text-align:center;font-size:14.5px;max-width:520px;line-height:1.55}
+  /* ── accesos rápidos ── */
+  .acc{width:100%;max-width:960px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:14px;margin-bottom:34px}
+  .acc-item{display:flex;align-items:center;gap:15px;padding:17px 20px;text-decoration:none;color:var(--ink);
+    background:var(--glass);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);
+    border:1px solid rgba(255,255,255,.65);border-radius:18px;box-shadow:0 8px 30px rgba(60,60,140,.09);
+    transition:transform .25s cubic-bezier(.2,.9,.3,1),box-shadow .25s,border-color .25s}
+  .acc-item:hover{transform:translateY(-3px);box-shadow:0 16px 44px rgba(91,95,214,.20);
+    border-color:rgba(124,127,240,.5)}
+  .acc-item .ic{flex:none;width:44px;height:44px;border-radius:13px;display:flex;align-items:center;
+    justify-content:center;font-size:21px;background:linear-gradient(145deg,rgba(124,127,240,.20),rgba(167,139,250,.14));
+    border:1px solid rgba(255,255,255,.6)}
+  .acc-item b{font-size:14.5px;display:block;margin-bottom:2px}
+  .acc-item span{font-size:11.5px;color:var(--muted);line-height:1.4}
+  /* ── grid de sesiones ── */
+  .list{width:100%;max-width:960px;display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:16px}
+  .card{position:relative;overflow:hidden;padding:20px 22px 18px;border-radius:20px;
+    background:var(--glass);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);
+    border:1px solid rgba(255,255,255,.6);box-shadow:0 8px 30px rgba(60,60,140,.09);
+    display:flex;flex-direction:column;min-height:186px;
+    transition:transform .28s cubic-bezier(.2,.9,.3,1),box-shadow .28s,border-color .28s}
+  .card::before{content:'';position:absolute;inset:0 0 auto 0;height:1px;
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,.9),transparent)}
+  a.card.pub{text-decoration:none;color:var(--ink)}
+  a.card.pub:hover{transform:translateY(-5px);box-shadow:0 20px 50px rgba(91,95,214,.22);
+    border-color:rgba(124,127,240,.55)}
+  a.card.pub:hover .go{gap:9px}
+  .card:not(.pub){opacity:.72}
+  .top{display:flex;align-items:center;justify-content:space-between;margin-bottom:13px}
+  .num{width:38px;height:38px;border-radius:12px;display:flex;align-items:center;justify-content:center;
+    font-weight:800;font-size:16px;color:#fff;
+    background:linear-gradient(140deg,var(--purple),var(--purple-dark));
+    box-shadow:0 5px 14px rgba(124,127,240,.42)}
+  .num.off{background:rgba(124,127,240,.13);color:var(--purple-dark);box-shadow:none}
+  .badge{font-size:10px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:var(--muted);
+    background:rgba(255,255,255,.6);border:1px solid var(--line);border-radius:20px;padding:5px 11px}
+  .badge.ok{color:#fff;background:linear-gradient(140deg,var(--purple),var(--purple-dark));border-color:transparent;
+    box-shadow:0 4px 12px rgba(124,127,240,.34)}
+  .card h3{font-size:17px;font-weight:800;letter-spacing:-.4px;line-height:1.25;margin-bottom:6px}
+  .desc{font-size:12.5px;color:var(--muted);line-height:1.5;flex:1}
+  .bottom{display:flex;align-items:center;justify-content:space-between;margin-top:14px;
+    padding-top:12px;border-top:1px solid var(--line)}
+  .fecha{font-size:11.5px;color:var(--muted);font-weight:600}
+  .go{font-size:12px;font-weight:700;color:var(--purple-dark);display:inline-flex;align-items:center;gap:5px;
+    transition:gap .25s}
+  /* ── pie ── */
+  .foot{margin-top:40px;color:var(--muted);font-size:12px;text-align:center;line-height:1.8;max-width:560px}
   .foot b{color:var(--purple-dark)}
+  @media (max-width:520px){ body{padding:32px 16px 46px} .logos{gap:12px;padding:10px 16px} }
 </style>
 </head>
 <body>
@@ -48,50 +101,63 @@
     <div class="lg-sep"></div>
     <div class="lg-fyllu"><img src="fyllu_icon.webp" alt="Fyllu"><span>Fyllu</span></div>
   </div>
-  <div class="kicker">— &nbsp;Séptima Escuela de Temporada FACTEC 2026 · USACH&nbsp; —</div>
-  <h1>Construye tu primer agente de IA:<br><span>de la idea a un asistente funcional</span></h1>
-  <p class="sub">Relator: Enrique Abril Contreras · Las slides de cada sesión se publican aquí el día de la clase.</p>
+
+  <div class="kicker">Séptima Escuela de Temporada FACTEC 2026 · USACH</div>
+  <h1>Construye tu primer agente de IA:<br><span class="grad">de la idea a un asistente funcional</span></h1>
+  <p class="sub">Relator: Enrique Abril Contreras · 6 sesiones en vivo, del 18 al 27 de agosto.<br>
+  Las slides de cada sesión se publican aquí el día de la clase.</p>
+
   <div class="acc">
-    <a class="card acc-item" href="https://meet.google.com/bbp-iqaj-mhy" target="_blank">
-      <div class="ic">🎦</div><div><b>Sala de clases (Google Meet)</b><span>Mismo enlace todas las sesiones · ingresa como Apellido.Nombre</span></div>
+    <a class="acc-item" href="https://meet.google.com/bbp-iqaj-mhy" target="_blank">
+      <div class="ic">🎦</div>
+      <div><b>Sala de clases</b><span>Google Meet · mismo enlace todas las sesiones<br>Ingresa como <b style="display:inline;font-size:11.5px">Apellido.Nombre</b></span></div>
     </a>
-    <a class="card acc-item" href="https://drive.google.com/drive/folders/1WMxvNrlUw88F_eTNltUMuUOWvGC7bl81" target="_blank">
-      <div class="ic">📁</div><div><b>Grabaciones y material</b><span>Carpeta compartida del curso (solo participantes)</span></div>
+    <a class="acc-item" href="https://drive.google.com/drive/folders/1WMxvNrlUw88F_eTNltUMuUOWvGC7bl81" target="_blank">
+      <div class="ic">📁</div>
+      <div><b>Grabaciones y material</b><span>Carpeta compartida del curso<br>Disponible para participantes</span></div>
     </a>
   </div>
+
   <div class="list">
-      <a class="card item pub" href="sesion1.html">
-        <div class="num">1</div>
-        <div class="tx"><b>El nuevo paradigma: programar con IA</b><span>Martes 18 de agosto · 19:00–21:00 (Chile)</span></div>
-        <div class="badge ok">Ver slides →</div>
+      <a class="card pub" href="sesion1.html">
+        <div class="top"><span class="num">1</span><span class="badge ok">Disponible</span></div>
+        <h3>El nuevo paradigma</h3>
+        <p class="desc">Programar con IA: qué es un AI Engineer y demo en vivo de Claude Code.</p>
+        <div class="bottom"><span class="fecha">Martes 18 de agosto</span><span class="go">Ver slides →</span></div>
       </a>
-      <div class="card item">
-        <div class="num off">2</div>
-        <div class="tx"><b>Claude Code como copiloto</b><span>Miércoles 19 de agosto · 19:00–21:00 (Chile)</span></div>
-        <div class="badge">Próximamente</div>
+      <div class="card">
+        <div class="top"><span class="num off">2</span><span class="badge">Próximamente</span></div>
+        <h3>Claude Code como copiloto</h3>
+        <p class="desc">Automatiza una tarea real de tu trabajo dirigiendo a la IA.</p>
+        <div class="bottom"><span class="fecha">Miércoles 19 de agosto</span></div>
       </div>
-      <div class="card item">
-        <div class="num off">3</div>
-        <div class="tx"><b>Anatomía de un agente</b><span>Jueves 20 de agosto · 19:00–21:00 (Chile)</span></div>
-        <div class="badge">Próximamente</div>
+      <div class="card">
+        <div class="top"><span class="num off">3</span><span class="badge">Próximamente</span></div>
+        <h3>Anatomía de un agente</h3>
+        <p class="desc">Modelo + instrucciones + memoria: construye tu primer agente.</p>
+        <div class="bottom"><span class="fecha">Jueves 20 de agosto</span></div>
       </div>
-      <div class="card item">
-        <div class="num off">4</div>
-        <div class="tx"><b>Dale manos a tu agente: herramientas (tools)</b><span>Martes 25 de agosto · 19:00–21:00 (Chile)</span></div>
-        <div class="badge">Próximamente</div>
+      <div class="card">
+        <div class="top"><span class="num off">4</span><span class="badge">Próximamente</span></div>
+        <h3>Dale manos a tu agente</h3>
+        <p class="desc">Herramientas (tools): que tu agente ejecute acciones reales.</p>
+        <div class="bottom"><span class="fecha">Martes 25 de agosto</span></div>
       </div>
-      <div class="card item">
-        <div class="num off">5</div>
-        <div class="tx"><b>MCP: conecta tu agente al mundo</b><span>Miércoles 26 de agosto · 19:00–21:00 (Chile)</span></div>
-        <div class="badge">Próximamente</div>
+      <div class="card">
+        <div class="top"><span class="num off">5</span><span class="badge">Próximamente</span></div>
+        <h3>MCP: conéctalo al mundo</h3>
+        <p class="desc">El estándar Model Context Protocol, en vivo.</p>
+        <div class="bottom"><span class="fecha">Miércoles 26 de agosto</span></div>
       </div>
-      <div class="card item">
-        <div class="num off">6</div>
-        <div class="tx"><b>Tu agente funcional + qué sigue</b><span>Jueves 27 de agosto · 19:00–21:00 (Chile)</span></div>
-        <div class="badge">Próximamente</div>
+      <div class="card">
+        <div class="top"><span class="num off">6</span><span class="badge">Próximamente</span></div>
+        <h3>Tu agente funcional</h3>
+        <p class="desc">Integración, buenas prácticas y qué sigue en tu camino.</p>
+        <div class="bottom"><span class="fecha">Jueves 27 de agosto</span></div>
       </div>
   </div>
-  <p class="foot">💡 Consejo: navega las slides con las flechas del teclado.<br>
-  La <b>grabación de cada sesión</b> se sube a la carpeta compartida después de clase.</p>
+
+  <p class="foot">💡 Navega las slides con las <b>flechas del teclado</b>.<br>
+  La grabación de cada sesión se sube a la carpeta compartida después de clase.</p>
 </body>
 </html>
