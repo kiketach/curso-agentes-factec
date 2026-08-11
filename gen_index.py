@@ -124,6 +124,7 @@ html = f'''<!DOCTYPE html>
   /* ── pie ── */
   .foot{{margin-top:40px;color:var(--muted);font-size:12px;text-align:center;line-height:1.8;max-width:560px}}
   .foot b{{color:var(--purple-dark)}}
+  .foot a{{color:var(--purple-dark);font-weight:700}}
   @media (max-width:520px){{ body{{padding:32px 16px 46px}} .logos{{gap:12px;padding:10px 16px}} }}
 </style>
 </head>
@@ -153,7 +154,11 @@ html = f'''<!DOCTYPE html>
   <div class="list">{"".join(items)}
   </div>
 
-  <p class="foot">💡 Navega las slides con las <b>flechas del teclado</b>.<br>
+  <p class="foot">
+  ✅ <b>Registro de asistencia:</b>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSfQCsAw8CC6v3OjfyFw7M4y-a5UIWlbPb99LixcQyKdEiT2sQ/viewform" target="_blank">abrir formulario</a>
+  — se habilita solo durante los últimos minutos de cada clase.<br>
+  💡 Navega las slides con las <b>flechas del teclado</b>.<br>
   La grabación de cada sesión se sube a la carpeta compartida después de clase.</p>
 </body>
 </html>
