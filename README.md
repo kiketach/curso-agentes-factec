@@ -53,11 +53,13 @@ Además del contenido, la operación del curso está **automatizada de punta a p
 Contiene el **sitio público** del curso. Las slides de cada sesión se publican progresivamente.
 
 ```
-├── index.html        # Hub: accesos del curso + estado de las 6 sesiones
-├── sesionN.html      # Slides de cada sesión (aparecen al publicarse)
-├── gen_index.py      # Regenera el índice según las sesiones publicadas
-├── publicar.sh       # Publica una sesión: bash publicar.sh N
-└── .github/workflows # Despliegue automático a GitHub Pages
+├── index.html            # Hub: accesos del curso + estado de las 6 sesiones
+├── sesionN.html          # Slides de cada sesión (aparecen al publicarse)
+├── assets/               # Logos y favicons
+├── scripts/
+│   ├── gen_index.py      # Regenera el índice según las sesiones publicadas
+│   └── publicar.sh       # Publica una sesión: bash scripts/publicar.sh N
+└── .github/workflows/    # Despliegue automático a GitHub Pages
 ```
 
 **Stack del sitio:** Marp · HTML/CSS (glassmorphism, responsive, tema claro) · Python · Bash · GitHub Actions.

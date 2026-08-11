@@ -9,7 +9,7 @@
 *.mp4
 
 # Excepción: los logos del sitio SÍ se publican
-!logo_factec.png
-!fyllu_icon.webp
-!favicon.png
-!favicon.ico
+!assets/logo_factec.png
+!assets/fyllu_icon.webp
+!assets/favicon.png
+!assets/favicon.ico

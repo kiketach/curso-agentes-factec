@@ -1,6 +1,9 @@
 # Genera index.html del sitio del curso según qué sesiones estén publicadas.
-# Una sesión está "publicada" si existe sesionN.html en esta carpeta.
+# Una sesión está "publicada" si existe sesionN.html en la raíz del repo.
+# Este script vive en scripts/ pero opera sobre la raíz.
 import os
+
+os.chdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 
 SESIONES = [
     (1, "El nuevo paradigma", "Programar con IA: qué es un AI Engineer y demo en vivo de Claude Code.", "Martes 18 de agosto"),
@@ -36,9 +39,9 @@ html = f'''<!DOCTYPE html>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Construye tu primer agente de IA — FACTEC 2026</title>
-<link rel="icon" href="favicon.ico" sizes="any">
-<link rel="icon" type="image/png" href="favicon.png">
-<link rel="apple-touch-icon" href="favicon.png">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/favicon.png">
 <meta name="theme-color" content="#7c7ff0">
 <meta name="description" content="Curso de la Séptima Escuela de Temporada FACTEC 2026 (USACH). 6 sesiones para construir tu primer agente de IA, del 18 al 27 de agosto.">
 <meta property="og:title" content="Construye tu primer agente de IA — FACTEC 2026">
@@ -134,11 +137,11 @@ html = f'''<!DOCTYPE html>
 <body>
   <div class="logos">
     <a href="https://www.usach.cl/facultad-tecnologica" target="_blank" rel="noopener" title="Facultad Tecnológica USACH">
-      <img src="logo_factec.png" alt="Facultad Tecnológica USACH" class="lg-factec">
+      <img src="assets/logo_factec.png" alt="Facultad Tecnológica USACH" class="lg-factec">
     </a>
     <div class="lg-sep"></div>
     <a class="lg-fyllu" href="https://fyllu.net" target="_blank" rel="noopener" title="Fyllu">
-      <img src="fyllu_icon.webp" alt="Fyllu"><span>Fyllu</span>
+      <img src="assets/fyllu_icon.webp" alt="Fyllu"><span>Fyllu</span>
     </a>
   </div>
 

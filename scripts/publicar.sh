@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # Publica las slides de una sesión en GitHub Pages.
-# Uso: bash publicar.sh N        (N = 1..6)
+# Uso: bash scripts/publicar.sh N   (N = 1..6)
 # Correr ~1 hora antes de cada clase. Copia el deck, regenera el índice y hace push.
 set -e
-cd "$(dirname "$0")"
+cd "$(dirname "$0")/.."          # trabajar desde la raíz del repo
 N="$1"
 [ -z "$N" ] && { echo "Uso: bash publicar.sh N (1..6)"; exit 1; }
 
@@ -33,7 +33,7 @@ else:
     print('boton ya presente en', p)
 PYEOF
 
-python gen_index.py
+python scripts/gen_index.py
 git add -A
 git commit -m "Publica sesión $N"
 git push
